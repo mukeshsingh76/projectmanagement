@@ -5,29 +5,67 @@
 </div>
 
 <hr/>
-<div>
-  <h1>Example - Event Click </h1>
-  <button (click)="increment()">Increment</button>
-  <span>{{counterValue}}</span>
+<div class="panel panel-default">
+  <div class="panel-heading">Example - Event Click</div>
+  <div class="panel-body">
+    <button (click)="increment()">Increment</button>
+    <span>{{counterValue}}</span>
+  </div>
 </div>
 
 <hr/>
-<div>
-  <h1>Example - Property </h1>
-  <input [value]="userlastname">
-  <p>Hello {{userlastname}}!</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Example - Property</div>
+  <div class="panel-body">
+    <input [value]="userlastname">
+    <p>Hello {{userlastname}}!</p>
+  </div>
 </div>
 
 <hr/>
-<div>
-  <h1>Example - Property + Event </h1>
-  <input [value]="username" (input)="username = $event.target.value">
-  <p>Hello {{username}}!</p>
+<div class="panel panel-default">
+  <div class="panel-heading">Example - Property + Event </div>
+  <div class="panel-body">
+    <input [value]="username" (input)="username = $event.target.value">
+    <p>Hello {{username}}!</p>
+  </div>
 </div>
 
 <hr/>
-<div>
-  <h1>Example - Dual Binding </h1>
-  <input type="text" [(ngModel)]="name">
-  <h1>your name is: {{name}} </h1>
+<div class="panel panel-default">
+  <div class="panel-heading">Example - Dual Binding </div>
+  <div class="panel-body">
+    <input type="text" [(ngModel)]="name">
+    <p>your name is: {{name}} </p>
+  </div>
+</div>
+
+<hr/>
+<div class="panel panel-default">
+  <div class="panel-heading">Example - Call Service </div>
+  <div class="panel-body">
+    <button (click)="getPosts()">Get Posts</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td>
+            {{post.id}}
+          </td>
+          <td>
+            {{post.title}}
+          </td>
+          <td>
+            {{post.body}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

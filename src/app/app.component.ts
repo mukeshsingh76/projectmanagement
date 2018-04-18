@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Post } from "./model/posts";
+import { PostService } from "./service/post.service";
 
 @Component({
   selector: "app-root",
@@ -10,8 +12,15 @@ export class AppComponent {
   counterValue = 0;
   username: string = "";
   userlastname: string = "Singh";
+  public posts: Post[];
+
+  constructor(private postService: PostService) {}
 
   increment() {
     this.counterValue++;
+  }
+
+  getPosts() {
+    this.posts = this.postService.GetPosts();
   }
 }
